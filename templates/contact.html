@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MindEase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">MindEase</div>
+        <div class="nav-links" id="navLinks">
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/resources">Resources</a>
+            <a href="/dashboard">DashBoard</a>
+            <a href="/community">Community</a>
+            <a href="/self_help_guide">Self-Help Guides</a>
+            <a href="/support">Support</a>
+            <a href="/contact">Contact</a>
+            <!-- <button class="profile-btn" id="openProfileBtn">Profile</button> -->
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="contact-header">
+        <h1>Get in Touch</h1>
+        <p>We’re here to listen and support you.</p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <form id="contactForm" class="contact-form">
+            <div class="form-row">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required>
+            </div>
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-row">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" required>
+            </div>
+            <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="cta-btn contact-btn">Send Message</button>
+            <div id="contactMsg" class="contact-msg"></div>
+        </form>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info-section">
+        <div class="contact-info-list">
+            <div class="contact-info-card">
+                <div class="contact-info-icon">📍</div>
+                <div>
+                    <h4>Address</h4>
+                    <p>MindEase, Wellness Center,<br>123 Campus Road, City, State</p>
+                </div>
+            </div>
+            <div class="contact-info-card">
+                <div class="contact-info-icon">📞</div>
+                <div>
+                    <h4>Phone</h4>
+                    <a href="tel:+911234567890">+91 12345 67890</a>
+                </div>
+            </div>
+            <div class="contact-info-card">
+                <div class="contact-info-icon">📧</div>
+                <div>
+                    <h4>Email</h4>
+                    <a href="mailto:support@mindease.com">support@mindease.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-embed">
+            <iframe title="MindEase Location" src="https://maps.google.com/maps?q=delhi%20university&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0; border-radius:16px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- FAQ Quick Links Section -->
+    <section class="faq-quicklinks-section">
+        <h3>Quick FAQ Links</h3>
+        <ul class="faq-quicklinks-list">
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/resources">Resources</a>
+            <a href="/dashboard">DashBoard</a>
+            <a href="/community">Community</a>
+            <a href="/self_help_guide">Self-Help Guides</a>
+            <a href="/support">Support</a>
+            <a href="/contact">Contact</a>
+        </ul>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Don’t hesitate to reach out — we care about your well-being.</h2>
+        <div class="cta-buttons">
+            <a href="/support" class="cta-btn">Go to Support</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            © 2025 MindEase. All rights reserved.
+        </div>
+    </footer>
+
+    
+    <script src="/static/contact.js"></script>
+    <script>
+    // Contact form JS
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const msg = document.getElementById('contactMsg');
+        msg.textContent = "Thank you for reaching out! We'll get back to you soon.";
+        this.reset();
+    });
+    </script>
+</body>
+</html>

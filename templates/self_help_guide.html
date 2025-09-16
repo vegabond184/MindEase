@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Help Guides - MindEase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">MindEase</div>
+        <div class="nav-links" id="navLinks">
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/resources">Resources</a>
+            <a href="/dashboard">DashBoard</a>
+            <a href="/community">Community</a>
+            <a href="/self_help_guide">Self-Help Guides</a>
+            <a href="/support">Support</a>
+            <a href="/contact">Contact</a>
+            <!-- <button class="profile-btn" id="openProfileBtn">Profile</button> -->
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="shg-header">
+        <h1>Self-Help Guides</h1>
+        <p>Practical tools and exercises to support your mental well-being.</p>
+    </section>
+
+    <!-- Guides Library Section -->
+    <section class="guides-library-section">
+        <div class="guides-categories" id="guidesCategories">
+            <!-- Populated by JS -->
+        </div>
+        <div class="guides-list" id="guidesList">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- Multimedia Resources Section -->
+    <section class="multimedia-section">
+        <div class="multimedia-filter" id="mediaFilter">
+            <button class="media-btn active" data-type="All">All</button>
+            <button class="media-btn" data-type="Video">Video</button>
+            <button class="media-btn" data-type="Audio">Audio</button>
+            <button class="media-btn" data-type="PDF">PDF</button>
+        </div>
+        <div class="multimedia-list" id="mediaList">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- Progress & Certificate Section -->
+    <section class="progress-section">
+        <div class="progress-card">
+            <h3>Your Progress</h3>
+            <div class="progress-bar-bg">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="progress-info">
+                <span id="progressCount"></span> guides completed
+            </div>
+            <button class="appointment_btn" id="downloadCertBtn">Download Certificate</button>
+        </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div class="modal-bg" id="certModalBg">
+        <div class="modal cert-modal">
+            <button class="close-btn" id="closeCertBtn">&times;</button>
+            <h2>Certificate of Achievement</h2>
+            <p>Congratulations! You have completed <span id="certCount"></span> self-help guides on MindEase.</p>
+            <div class="cert-date" id="certDate"></div>
+            <button class="cta-btn" id="downloadCertFileBtn">Download as PDF</button>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Start your journey today. Small steps lead to big changes.</h2>
+        <div class="cta-buttons">
+            <a href="#guidesList" class="cta-btn">Explore Guides</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            © 2025 MindEase. All rights reserved.
+        </div>
+    </footer>
+    
+    <script src="/static/main.js"></script>
+    <script src="/static/self_help_guide.js"></script>
+</body>
+</html>

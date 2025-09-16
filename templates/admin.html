@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindEase Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="admin-body">
+    <div class="admin-dashboard">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-logo">MindEase Admin</div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-page="overview"><span>🏠</span> Overview</a>
+                <a href="#" class="sidebar-link" data-page="analytics"><span>📊</span> User Analytics</a>
+                <a href="#" class="sidebar-link" data-page="bookings"><span>📅</span> Counselling Bookings</a>
+                <a href="#" class="sidebar-link" data-page="chatbot"><span>🤖</span> Chatbot Trends</a>
+                <a href="#" class="sidebar-link" data-page="resources"><span>📚</span> Resources Management</a>
+                <a href="#" class="sidebar-link" data-page="settings"><span>⚙️</span> Settings</a>
+            </nav>
+            <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+        </aside>
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Header -->
+            <header class="admin-header">
+                <div class="admin-profile">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Admin" class="admin-avatar">
+                    <span class="admin-name">Admin Name</span>
+                    <div class="admin-dropdown">
+                        <button id="adminDropdownBtn">▼</button>
+                        <div class="admin-dropdown-menu" id="adminDropdownMenu">
+                            <a href="#" id="adminSettings">Settings</a>
+                            <a href="#" id="adminLogout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-stats">
+                    <div class="admin-stat-card">
+                        <div class="stat-label">Users</div>
+                        <div class="stat-value" id="statUsers">1,250</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="stat-label">Active Sessions</div>
+                        <div class="stat-value" id="statSessions">87</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="stat-label">Tests This Week</div>
+                        <div class="stat-value" id="statTests">320</div>
+                    </div>
+                    <div class="admin-stat-card">
+                        <div class="stat-label">Bookings</div>
+                        <div class="stat-value" id="statBookings">42</div>
+                    </div>
+                </div>
+            </header>
+            <!-- Pages -->
+            <section class="admin-page" id="overviewPage">
+                <h2>Overview</h2>
+                <div class="admin-charts">
+                    <div class="admin-chart-card">
+                        <h4>Active Users</h4>
+                        <canvas id="activeUsersChart" height="120"></canvas>
+                    </div>
+                    <div class="admin-chart-card">
+                        <h4>Avg PHQ-9 & GAD-7 Scores</h4>
+                        <canvas id="avgScoresChart" height="120"></canvas>
+                    </div>
+                    <div class="admin-chart-card">
+                        <h4>Users by Category</h4>
+                        <canvas id="categoryPieChart" height="120"></canvas>
+                    </div>
+                </div>
+            </section>
+            <section class="admin-page" id="analyticsPage" style="display:none;">
+                <h2>User Analytics</h2>
+                <div class="analytics-filter">
+                    <label><input type="checkbox" id="highRiskFilter"> Show High-Risk Only</label>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table" id="userAnalyticsTable">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Last Login</th>
+                                <th>Tests Taken</th>
+                                <th>Engagement</th>
+                                <th>Risk</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="admin-page" id="bookingsPage" style="display:none;">
+                <h2>Counselling Bookings</h2>
+                <div class="admin-table-wrap">
+                    <table class="admin-table" id="bookingsTable">
+                        <thead>
+                            <tr>
+                                <th>Booking ID</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Mode</th>
+                                <th>Status</th>
+                                <th>Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="admin-page" id="chatbotPage" style="display:none;">
+                <h2>Chatbot Trends</h2>
+                <div class="admin-chart-card" style="max-width:500px;margin:auto;">
+                    <canvas id="chatbotTrendsChart" height="180"></canvas>
+                </div>
+            </section>
+            <section class="admin-page" id="resourcesPage" style="display:none;">
+                <h2>Resources Management</h2>
+                <form id="resourceForm" class="resource-form">
+                    <input type="text" id="resourceTitle" placeholder="Title" required>
+                    <input type="text" id="resourceDesc" placeholder="Description" required>
+                    <select id="resourceType" required>
+                        <option value="">Type</option>
+                        <option value="Blog">Blog</option>
+                        <option value="Audio">Audio</option>
+                        <option value="Video">Video</option>
+                        <option value="PDF">PDF</option>
+                    </select>
+                    <button type="submit" class="cta-btn">Add Resource</button>
+                </form>
+                <div class="admin-table-wrap">
+                    <table class="admin-table" id="resourcesTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section class="admin-page" id="settingsPage" style="display:none;">
+                <h2>Settings</h2>
+                <div class="settings-section">
+                    <h4>Counsellor Profiles</h4>
+                    <div id="counsellorList"></div>
+                    <form id="counsellorForm" class="counsellor-form">
+                        <input type="text" id="counsellorName" placeholder="Name" required>
+                        <input type="text" id="counsellorContact" placeholder="Contact Info" required>
+                        <input type="text" id="counsellorAvail" placeholder="Availability" required>
+                        <button type="submit" class="cta-btn">Add Counsellor</button>
+                    </form>
+                </div>
+                <div class="settings-section">
+                    <h4>Platform Settings</h4>
+                    <label>
+                        <input type="checkbox" id="langSupport"> Enable Regional Language Support
+                    </label>
+                    <label>
+                        <input type="checkbox" id="darkTheme"> Enable Dark Theme
+                    </label>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="admin-footer">
+        &copy; 2025 MindEase Admin Dashboard
+    </footer>
+    <script src="admin.js"></script>
+</body>
+</html>

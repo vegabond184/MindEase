@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindEase Login</title>
+
+ 
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f9ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      width: 100%;
+      max-width: 380px;
+      padding: 28px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 8px;
+      color: #2563eb;
+      font-size: 24px;
+    }
+    p.tagline {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 20px;
+    }
+    p.error {
+      color: red;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .login-btn {
+      background: #2563eb;
+      color: #fff;
+    }
+    .login-btn:hover {
+      background: #1d4ed8;
+    }
+    .create-btn {
+      background: #34d399;
+      color: #fff;
+    }
+    .create-btn:hover {
+      background: #059669;
+    }
+    .anon-btn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+    .anon-btn:hover {
+      background: #d1d5db;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <form method="POST"
+              action="{{ url_for('login') }}">
+    <h1>MindEase</h1>
+    <p class="tagline">Supporting students' mental health and well-being 💙</p>
+
+    <input type="text" id="username" name="Email" placeholder="Email" />
+    <input type="password" id="password" name="password" placeholder="Password" />
+    
+    <button class="login-btn" onclick="handleLogin()" type="submit">Login</button>
+    <a href="/signup"><button class="create-btn"  type="button">Create an Account</button></a>
+    <a href="/anonymous"><button class="anon-btn" type="button">Continue as Anonymous</button></a> 
+  </form>
+ 
+
+    <p class="error">{{error}}</p>
+  
+
+  </div>
+
+
+
+  <script>
+    function handleLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!username || !password) {
+        alert('Please enter both username and password.');
+        return;
+      }
+
+      // alert(`Welcome back, ${username}! Remember, your well-being matters 💙`);
+      // Redirect to chat page
+      // window.location.href = "chat.html";
+    }
+
+    function handleCreate() {
+      alert('Redirecting to account creation page... 📝');
+      // Redirect to account creation page
+      // window.location.href = "signup.html";
+    }
+
+    function handleAnonymous() {
+      alert('Continuing as Anonymous. You are not alone 💚');
+      // Redirect to chat page
+      // window.location.href = "chat.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - MindEase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">MindEase</div>
+        <div class="nav-links" id="navLinks">
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/resources">Resources</a>
+            <a href="/dashboard">DashBoard</a>
+            <a href="/community">Community</a>
+            <a href="/self_help_guide">Self-Help Guides</a>
+            <a href="/support">Support</a>
+            <a href="/contact">Contact</a>
+            <!-- <button class="profile-btn" id="openProfileBtn">Profile</button> -->
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="support-header">
+        <div class="support-header-content">
+            <h1>We’re Here to Support You</h1>
+            <p>No matter what you’re facing, MindEase is here to help. Reach out for confidential support, connect with peers, or access emergency help—whenever you need it.</p>
+        </div>
+        <div class="support-header-graphic">
+            <!-- <img src="https://undraw.co/api/illustrations/undraw_mindfulness_8gqa.svg" alt="Support Illustration" /> -->
+        </div>
+    </section>
+
+    <!-- Anonymous Counselling Booking -->
+    <section class="support-section">
+        <div class="support-card">
+            <h2>Book Anonymous Counselling</h2>
+            <form id="counsellingForm" autocomplete="off">
+                <div class="form-row">
+                    <label>Auto-generated ID</label>
+                    <input type="text" id="anonId" readonly>
+                </div>
+                <div class="form-row">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-row">
+                    <label for="time">Time Slot</label>
+                    <select id="time" required>
+                        <option value="">Select</option>
+                        <option>09:00 - 10:00</option>
+                        <option>10:00 - 11:00</option>
+                        <option>11:00 - 12:00</option>
+                        <option>14:00 - 15:00</option>
+                        <option>15:00 - 16:00</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="mode">Mode</label>
+                    <select id="mode" required>
+                        <option value="">Select</option>
+                        <option>Online</option>
+                        <option>Offline</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="notes">Notes (optional)</label>
+                    <textarea id="notes" rows="2" placeholder="Anything you'd like to share?"></textarea>
+                </div>
+                <button type="submit" class="appointment_btn">Book Appointment</button>
+                <div id="bookingMsg" class="booking-msg"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Helplines & Emergency Contacts -->
+    <section class="support-section">
+        <div class="support-card">
+            <h2>Helplines & Emergency Contacts</h2>
+            <div class="helpline-lang">
+                <label for="helplineLang">Language:</label>
+                <select id="helplineLang">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ta">Tamil</option>
+                </select>
+            </div>
+            <ul class="helpline-list" id="helplineList">
+                <!-- Populated by JS -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Peer Support Platform -->
+    <section class="support-section">
+        <div class="support-card">
+            <h2>Peer Support Forum Preview</h2>
+            <div class="peer-forum-list">
+                <div class="peer-card">
+                    <h4>Feeling Overwhelmed with Studies</h4>
+                    <p>“Does anyone have tips for managing exam stress? I feel anxious all the time.”</p>
+                    <span class="peer-meta">12 replies · 2h ago</span>
+                </div>
+                <div class="peer-card">
+                    <h4>Dealing with Loneliness</h4>
+                    <p>“How do you cope with feeling alone on campus? Would love to hear your stories.”</p>
+                    <span class="peer-meta">8 replies · 1d ago</span>
+                </div>
+                <div class="peer-card">
+                    <h4>Motivation for Self-Care</h4>
+                    <p>“What are your favorite self-care routines? Let’s inspire each other!”</p>
+                    <span class="peer-meta">15 replies · 3d ago</span>
+                </div>
+            </div>
+            <a href="#" class="cta-btn peer-btn">Go to Peer Forum</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="support-section">
+        <div class="support-card">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Is my counselling session confidential?</button>
+                    <div class="faq-answer">Yes, all sessions are strictly confidential. No personal details are required for booking.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I join the peer support forum?</button>
+                    <div class="faq-answer">Click the “Go to Peer Forum” button above. You can join discussions anonymously.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What if I need urgent help?</button>
+                    <div class="faq-answer">Call one of the 24/7 helplines listed above for immediate support.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I book multiple counselling sessions?</button>
+                    <div class="faq-answer">Yes, you can book as many sessions as you need. Each booking is anonymous.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>You are not alone. Connect with someone today.</h2>
+        <div class="cta-buttons">
+            <a href="#counsellingForm" class="cta-btn">Book Counselling</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            © 2025 MindEase. All rights reserved.
+        </div>
+    </footer>
+    
+    <script src="/static/main.js"></script>
+    <script>
+// Support page JS
+
+// Anonymous ID generation
+if(document.getElementById('anonId')) {
+    document.getElementById('anonId').value = "ME-" + Math.random().toString(36).substr(2, 8).toUpperCase();
+}
+
+// Counselling booking form
+const counsellingForm = document.getElementById('counsellingForm');
+if (counsellingForm) {
+    counsellingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('bookingMsg').textContent = "Your anonymous booking has been received! We'll confirm your slot soon.";
+        counsellingForm.reset();
+        document.getElementById('anonId').value = "ME-" + Math.random().toString(36).substr(2, 8).toUpperCase();
+    });
+}
+
+// Helplines data
+const helplines = {
+    en: [
+        { name: "National Helpline", phone: "1800-599-0019" },
+        { name: "Student Support", phone: "1800-121-3667" },
+        { name: "Emergency", phone: "112" }
+    ],
+    hi: [
+        { name: "राष्ट्रीय हेल्पलाइन", phone: "1800-599-0019" },
+        { name: "छात्र सहायता", phone: "1800-121-3667" },
+        { name: "आपातकालीन", phone: "112" }
+    ],
+    ta: [
+        { name: "தேசிய உதவி", phone: "1800-599-0019" },
+        { name: "மாணவர் ஆதரவு", phone: "1800-121-3667" },
+        { name: "அவசரம்", phone: "112" }
+    ]
+};
+function renderHelplines(lang) {
+    const list = document.getElementById('helplineList');
+    if (!list) return;
+    list.innerHTML = '';
+    helplines[lang].forEach(h => {
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${h.name}</span> <a href="tel:${h.phone}" class="helpline-btn">Call</a>`;
+        list.appendChild(li);
+    });
+}
+const helplineLang = document.getElementById('helplineLang');
+if (helplineLang) {
+    renderHelplines(helplineLang.value);
+    helplineLang.addEventListener('change', e => renderHelplines(e.target.value));
+}
+
+// FAQ collapsible
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+        this.classList.toggle('open');
+        const answer = this.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+});
+    </script>
+</body>
+</html>

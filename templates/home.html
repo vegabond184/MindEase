@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindEase - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static\style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">MindEase</div>
+        <div class="nav-links" id="navLinks">
+            <a class="active" href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/resources">Resources</a>
+            <a href="/dashboard">DashBoard</a>
+            <a href="/community">Community</a>
+            <a href="/self_help_guide">Self-Help Guides</a>
+            <a href="/support">Support</a>
+            <a href="/contact">Contact</a>
+            <!-- <button class="profile-btn" id="openProfileBtn">Profile</button> -->
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Header Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Calm with MindEase</h1>
+            <p>
+                MindEase is your companion for better mental health. Track your mood, chat with our AI for personalized advice, and access instant support—all in one safe, supportive space.
+            </p>
+            <a href="/chat"><button class="cta-btn">Chat With Ai</button></a>
+        </div>
+        <div class="hero-graphic">
+            <!-- Modern SVG illustration -->
+            <svg viewBox="0 0 320 220" fill="none">
+                <ellipse cx="160" cy="180" rx="120" ry="30" fill="#eaeaea"/>
+                <circle cx="110" cy="100" r="60" fill="#6C63FF" opacity="0.15"/>
+                <circle cx="210" cy="110" r="50" fill="#43D8C9" opacity="0.13"/>
+                <rect x="90" y="60" width="140" height="100" rx="30" fill="#fff" stroke="#6C63FF" stroke-width="3"/>
+                <circle cx="160" cy="110" r="30" fill="#6C63FF" opacity="0.18"/>
+                <ellipse cx="160" cy="110" rx="18" ry="12" fill="#43D8C9" opacity="0.25"/>
+                <text x="160" y="120" text-anchor="middle" fill="#6C63FF" font-size="22" font-family="Montserrat" font-weight="bold">😊</text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Features List Section -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="icon">💬</div>
+            <h3>AI Mood Tracking</h3>
+            <p>Chat with our AI to track your depression level—mild, moderate, or severe—using simple, supportive conversations.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🤖</div>
+            <h3>Personalized Advice</h3>
+            <p>Get instant, tailored advice and self-help tips from our intelligent chatbot, designed for your unique journey.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📞</div>
+            <h3>Professional Helplines</h3>
+            <p>Access a curated list of professional helplines and resources whenever you need extra support.</p>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="benefit">
+            <h4>Better Tracking</h4>
+            <p>Monitor your mental health progress over time with easy-to-understand insights and trends.</p>
+        </div>
+        <div class="benefit">
+            <h4>Personalized Self-Help</h4>
+            <p>Receive self-help guides and actionable steps tailored to your needs and mood.</p>
+        </div>
+        <div class="benefit">
+            <h4>Instant Support</h4>
+            <p>Get immediate support and advice, any time you need it, right at your fingertips.</p>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-list">
+            <div class="testimonial">
+                <p>"MindEase helped me understand my progress better and gave me hope on tough days."</p>
+                <div class="user">– Priya S.</div>
+            </div>
+            <div class="testimonial">
+                <p>"The AI chat is so supportive and the advice feels truly personal."</p>
+                <div class="user">– Rahul M.</div>
+            </div>
+            <div class="testimonial">
+                <p>"I love how easy it is to get help and track my mood. Highly recommended!"</p>
+                <div class="user">– Ananya K.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Take the Next Step?</h2>
+        <p>Sign up for a free account, continue as anonymous, or learn more about MindEase.</p>
+        <div class="cta-buttons">
+            <button onclick="alert('Sign Up flow coming soon!')">Sign Up</button>
+            <button onclick="alert('Anonymous mode coming soon!')">Continue as Anonymous</button>
+            <a href="#" style="background:transparent; color:#fff; border:2px solid #fff;">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Profile Modal -->
+    <div class="modal-bg" id="profileModalBg">
+        <div class="modal">
+            <button class="close-btn" id="closeProfileBtn">&times;</button>
+            <h2>Your Profile</h2>
+            <img src="https://i.imgur.com/0y0y0y0.png" alt="Profile Picture" class="profile-pic" id="profilePic">
+            <div class="profile-fields">
+                <label>Username</label>
+                <input type="text" value="MindEaseUser" readonly>
+                <label>Profile Picture</label>
+                <input type="file" accept="image/*" id="profilePicInput">
+                <label>Age</label>
+                <input type="number" min="10" max="120" value="22" id="profileAge">
+                <label>Password</label>
+                <input type="password" value="password123" id="profilePassword">
+            </div>
+            <button class="download-btn" id="downloadCertBtn">Download Certificate</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            © 2025 MindEase. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="static\main.js"></script>
+</body>
+</html>
