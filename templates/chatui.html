@@ -19,7 +19,7 @@
       grid-template-rows: auto 1fr auto;
       width: 100%;
       max-width: 800px;
-      height: 85vh;
+      height: -webkit-fill-available;
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -80,6 +80,7 @@
       border-radius: 6px;
       border: 1px solid #d1d5db;
       outline: none;
+      /* font-size: larger; */
     }
     button {
       padding: 8px 16px;
@@ -149,7 +150,7 @@
     }
 
     function sendreq(mess, assistantDiv) {
-      fetch("http://127.0.0.1:5000/chatback", {
+      fetch("https://373f26e0c548.ngrok-free.app/chatback", {
         method: "POST",
         body: JSON.stringify({ message: mess }),
         headers: {

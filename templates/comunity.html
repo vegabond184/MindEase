@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindEase - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">MindEase</div>
+        <div class="nav-links" id="navLinks">
+            <a class="active" href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/resources">Resources</a>
+            <a href="/dashboard">DashBoard</a>
+            <a href="/community">Community</a>
+            <a href="/self_help_guide">Self-Help Guides</a>
+            <a href="/support">Support</a>
+            <a href="/contact">Contact</a>
+            <!-- <button class="profile-btn" id="openProfileBtn">Profile</button> -->
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <section class="com-header">
+        <h1>Community</h1>
+        <!-- <p>Student Mental Health Support System</p> -->
+    </section>
+    
+      <div class="container" id="posts"></div>
+    
+      <div class="new-post">
+        <textarea id="postInput" placeholder="Share your thoughts..."></textarea>
+        <button onclick="addPost()">Post</button>
+      </div>
+
+
+
+
+      <script>
+        const postsContainer = document.getElementById("posts");
+    
+        function addPost() {
+          const input = document.getElementById("postInput");
+          const text = input.value.trim();
+          if (!text) return;
+    
+          const postDiv = document.createElement("div");
+          postDiv.className = "post";
+    
+          const meta = document.createElement("div");
+          meta.className = "meta";
+          meta.textContent = "Anonymous • just now";
+    
+          const content = document.createElement("div");
+          content.className = "content";
+          content.textContent = text;
+    
+          const actions = document.createElement("div");
+          actions.className = "actions";
+          actions.innerHTML = `<span onclick="toggleComments(this)">💬 Comment</span>`;
+    
+          const commentSection = document.createElement("div");
+          commentSection.className = "comment-section";
+          commentSection.style.display = "none";
+    
+          const commentInputDiv = document.createElement("div");
+          commentInputDiv.className = "comment-input";
+          commentInputDiv.innerHTML = `
+            <input type="text" placeholder="Write a comment...">
+            <button onclick="addComment(this)">Reply</button>
+          `;
+    
+          commentSection.appendChild(commentInputDiv);
+    
+          postDiv.appendChild(meta);
+          postDiv.appendChild(content);
+          postDiv.appendChild(actions);
+          postDiv.appendChild(commentSection);
+    
+          postsContainer.prepend(postDiv);
+          input.value = "";
+        }
+    
+        function toggleComments(el) {
+          const commentSection = el.parentElement.nextElementSibling;
+          commentSection.style.display =
+            commentSection.style.display === "none" ? "block" : "none";
+        }
+    
+        function addComment(button) {
+          const input = button.previousElementSibling;
+          const text = input.value.trim();
+          if (!text) return;
+    
+          const commentDiv = document.createElement("div");
+          commentDiv.className = "comment";
+          commentDiv.textContent = "Anonymous: " + text;
+    
+          const section = button.closest(".comment-section");
+          section.insertBefore(commentDiv, section.lastElementChild);
+    
+          input.value = "";
+        }
+      </script>
+
+
+
+
+
+
+
+
+    <script src="\static\main.js"></script>
+</body>
+</html>

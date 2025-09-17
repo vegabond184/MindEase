@@ -169,7 +169,7 @@ def tracking():
 
 @app.route('/community/')
 def blog():
-    return render_template('peertopeer.html')
+    return render_template('comunity.html')
 
 @app.route('/self_help_guide/')
 def self_help_guide():

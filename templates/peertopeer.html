@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anonymous Student Mental Health Community</title>
+  <link rel="stylesheet" href="\static\style.css">
   <style>
     body {
       margin: 0;
@@ -145,12 +146,54 @@
     .comment-input button:hover {
       background: #4338ca;
     }
+
+    .com-header {
+    background: linear-gradient(120deg, var(--primary) 0%, var(--accent) 100%);
+    color: var(--light);
+    text-align: center;
+    /* padding: 3rem 2rem 2rem 2rem; */
+}
+.com-header h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    /* margin-bottom: 1rem; */
+}
+.com-header p {
+    font-size: 1.15rem;
+    opacity: 0.95;
+}
   </style>
+  
 </head>
+
 <body>
+
+    <nav>
+        <div class="logo">MindEase</div>
+        <div class="nav-links" id="navLinks">
+            <a class="active" href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/resources">Resources</a>
+            <a href="/dashboard">DashBoard</a>
+            <a href="/community">Community</a>
+            <a href="/self_help_guide">Self-Help Guides</a>
+            <a href="/support">Support</a>
+            <a href="/contact">Contact</a>
+            <!-- <button class="profile-btn" id="openProfileBtn">Profile</button> -->
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+<!-- 
   <div class="header">
     🌱 Student Mental Health Community (Anonymous)
-  </div>
+  </div> -->
+  <section class="com-header">
+    <h1>Community</h1>
+    <!-- <p>Student Mental Health Support System</p> -->
+</section>
 
   <div class="container" id="posts"></div>
 
@@ -158,6 +201,7 @@
     <textarea id="postInput" placeholder="Share your thoughts..."></textarea>
     <button onclick="addPost()">Post</button>
   </div>
+  
 
   <script>
     const postsContainer = document.getElementById("posts");
@@ -225,5 +269,6 @@
       input.value = "";
     }
   </script>
+  <script src="\static\main.js"></script>
 </body>
 </html>
