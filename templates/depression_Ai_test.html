@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MindEase Chat</title>
+  <title>Depression Test</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #9ed6db;
+      background: #8caac7;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -44,7 +44,7 @@
     .chat-messages {
       padding: 16px;
       overflow-y: auto;
-      background: linear-gradient(180deg, #9ed6db 0%, #fbfbff 100%);
+      background: linear-gradient(180deg, #888bb5 0%, #fbfbff 100%);
     }
     .message {
       margin-bottom: 12px;
@@ -103,13 +103,13 @@
   <div class="chat-container">
     
     <div class="chat-header">
-      <h2>MindEase Chat 💙</h2>
-      <p>A safe space to talk about stress, anxiety, and student life.</p>
+      <h2>Depression Test</h2>
+      <p>PHQ-9(Patient Health Questionnaire-9) Test With AI Analysis</p>
     </div>
     <div class="chat-messages" id="chatMessages"></div>
     
     <div class="chat-input">
-      <textarea id="chatInput" name="user_message" placeholder="Type a message..."></textarea>
+      <textarea id="chatInput" name="user_message" placeholder="Enter Your Answer.."></textarea>
       <button class="send-btn" type="submit" id="sendBtn">Send</button>
     </div>
   
@@ -151,7 +151,7 @@
     }
 
     function sendreq(mess, assistantDiv) {
-      fetch("https://595d6dfb48f3.ngrok-free.app/chatback", {
+      fetch("https://595d6dfb48f3.ngrok-free.app/dep_back", {
         method: "POST",
         body: JSON.stringify({ message: mess }),
         headers: {
@@ -188,7 +188,7 @@
 
     // Initial supportive welcome message
     if (oldHistory.length === 0) {
-      appendMessage('assistant', "👋 Hi! I'm here to listen and support you. How are you feeling today?");
+      appendMessage('assistant', "👋 Hi! Please Enter 'Start' to start your PHQ-9 Test");
     }
   </script>
 </body>
